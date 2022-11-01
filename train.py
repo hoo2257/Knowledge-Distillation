@@ -77,6 +77,23 @@ createFolder('./models')
 teacher, loss_hist, metric_hist = train_val(teacher, params_train)
 
 
+plt.title('Train-Val Loss')
+plt.plot(range(1, params_train['num_epochs']+1), loss_hist['train'], label='train')
+plt.plot(range(1, params_train['num_epochs']+1), loss_hist['val'], label='val')
+plt.ylabel('Loss')
+plt.xlabel('Training Epochs')
+plt.legend()
+plt.show()
+
+# plot train-val accuracy
+plt.title('Train-Val Accuracy')
+plt.plot(range(1, params_train['num_epochs']+1), metric_hist['train'], label='train')
+plt.plot(range(1, params_train['num_epochs']+1), metric_hist['val'], label='val')
+plt.ylabel('Accuracy')
+plt.xlabel('Training Epochs')
+plt.legend()
+plt.show()
+
 
 
 
